@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UiPath.Robot.Api</name>
+    </assembly>
+    <members>
+        <member name="T:UiPath.Robot.Api.IRobotClient">
+            <summary>
+            Interface for controlling the user's robot.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.IRobotClient.RunJob(UiPath.Robot.Api.Job,System.Threading.CancellationToken)">
+            <summary>
+            Start and wait for the provided <see cref="T:UiPath.Robot.Api.Job"/> to complete.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.IRobotClient.GetProcesses(UiPath.Robot.Api.GetProcessesParameters,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of the processes available for execution.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.IRobotClient.GetAccessToken(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get the signed in user's access token that can be used for UiPath services.
+            Use refresh:false for obtaining a cached but potentially expired token and refresh:true for obtaining a fresh token.
+            Returns null if not signed in.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.IRobotClient.InstallProcess(UiPath.Robot.Api.InstallProcessParameters,System.Threading.CancellationToken)">
+            <summary>
+            Installs a Process.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Robot.Api.JobOutput">
+            <summary>
+            The output of a successful job execution.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.JobOutput.Arguments">
+            <summary>
+            The output arguments of the job.
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.GetProcessesParameters">
+            <summary>
+            Parameters for obtaining the process list.
+            Empty, reserved for extension.
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.InstallProcessParameters">
+            <summary>
+            Parameters for installing a process.
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.InstallProcessResult">
+            <summary>
+            The result of a process installation.
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.JobStatusChangedArgs">
+            <summary>
+            Details about the job's status change.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.JobStatusChangedArgs.Status">
+            <summary>
+            The new job status.
+            </summary>
+        </member>
+        <member name="E:UiPath.Robot.Api.Job.StatusChanged">
+            <summary>
+            The job has changed its status.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.Job.ProcessKey">
+            <summary>
+            The key of the process to execute.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.Job.Id">
+            <summary>
+            Id of the job.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.Job.InputArguments">
+            <summary>
+            Input arguments for the main workflow.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.Job.InternalArguments">
+            <summary>
+            Reserved for internal use
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.Job.#ctor(System.String)">
+            <summary>
+            Create an unstarted job definition for the process with the provided key.
+            You can start this job using <see cref="M:UiPath.Robot.Api.IRobotClient.RunJob(UiPath.Robot.Api.Job,System.Threading.CancellationToken)"/>.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.Job.#ctor(UiPath.Robot.Api.ProcessInfo)">
+            <summary>
+            Create an unstarted <see cref="T:UiPath.Robot.Api.Job"/> from the provided process.
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.ProcessInfo">
+            <summary>
+            Information about an available process.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.ProcessInfo.Key">
+            <summary>
+            Unique identifier of the process.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.ProcessInfo.Name">
+            <summary>
+            Name of the process.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.ProcessInfo.Description">
+            <summary>
+            Process Description.
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.InputArgumentDefinition">
+            <summary>
+            Input Argument Schema.
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.JobExecutionException">
+            <summary>
+            Job execution has failed.
+            The inner exception is the exception that has failed the workflow.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.ExtensionMethods.GetJobException(System.Exception)">
+            <summary>
+            Extract the job execution exception from the <see cref="M:UiPath.Robot.Api.IRobotClient.RunJob(UiPath.Robot.Api.Job,System.Threading.CancellationToken)"/> call exception.
+            Return null if the exception is not a job exception.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.ExtensionMethods.ToJob(UiPath.Robot.Api.ProcessInfo)">
+            <summary>
+            Create an unstarted <see cref="T:UiPath.Robot.Api.Job"/> from the provided process.
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.Properties.Resources.JobExecutionFailed">
+            <summary>
+              Looks up a localized string similar to Job has failed..
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.Properties.Resources.PipeNotFound">
+            <summary>
+              Looks up a localized string similar to Could not connect to the Robot Service. Make sure the service is started..
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.RobotClientSettings">
+            <summary>
+            Settings for the robot client.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.RobotClientSettings.EventScheduler">
+            <summary>
+            Scheduler used for emitting events.
+            By default, the current <see cref="T:System.Threading.SynchronizationContext"/> is used.
+            </summary>
+        </member>
+        <member name="P:UiPath.Robot.Api.RobotClientSettings.ServiceProvider">
+            <summary>
+            <see cref="T:System.IServiceProvider"/> used for obtaining the <see cref="T:UiPath.CoreIpc.ISerializer"/> and <see cref="T:Microsoft.Extensions.Logging.ILogger"/> services.
+            If none is provided, an anonymous service provider will be used.
+            You can use <see cref="M:UiPath.CoreIpc.ServiceCollectionExtensions.AddIpc(Microsoft.Extensions.DependencyInjection.IServiceCollection)"/> and <see cref="M:Microsoft.Extensions.DependencyInjection.LoggingServiceCollectionExtensions.AddLogging(Microsoft.Extensions.DependencyInjection.IServiceCollection)"/>.
+            </summary>
+        </member>
+        <member name="T:UiPath.Robot.Api.RobotClient">
+            <summary>
+            Xml documentation available in <see cref="T:UiPath.Robot.Api.IRobotClient"/>.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.RobotClient.#ctor">
+            <summary>
+            Xml documentation available in <see cref="T:UiPath.Robot.Api.IRobotClient"/>.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.RobotClient.RunJob(UiPath.Robot.Api.Job,System.Threading.CancellationToken)">
+            <summary>
+            Xml documentation available in <see cref="T:UiPath.Robot.Api.IRobotClient"/>.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.RobotClient.GetProcesses(UiPath.Robot.Api.GetProcessesParameters,System.Threading.CancellationToken)">
+            <summary>
+            Xml documentation available in <see cref="T:UiPath.Robot.Api.IRobotClient"/>.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.RobotClient.GetAccessToken(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Xml documentation available in <see cref="T:UiPath.Robot.Api.IRobotClient"/>.
+            </summary>
+        </member>
+        <member name="M:UiPath.Robot.Api.RobotClient.InstallProcess(UiPath.Robot.Api.InstallProcessParameters,System.Threading.CancellationToken)">
+            <summary>
+            Xml documentation available in <see cref="T:UiPath.Robot.Api.IRobotClient"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

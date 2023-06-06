@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>UiPath.CLI</id>
+    <version>21.10.8319.10920</version>
+    <authors>UiPath Inc.</authors>
+    <iconUrl>https://download.uipath.com/UI_icon.png</iconUrl>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="UiPath.Extensions.CommandLine.Core" version="21.10.8319.10920" exclude="Build,Analyzers" />
+        <dependency id="Autofac" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="CsvHelper" version="27.1.1" exclude="Build,Analyzers" />
+        <dependency id="UiPath.Orchestrator.Client" version="1.0.8041-alpha15340" exclude="Build,Analyzers" />
+        <dependency id="UiPath.Telemetry.Client" version="1.3.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.6.1" />
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework=".NETFramework4.6.1" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.6.1" />
+      <frameworkAssembly assemblyName="System.Security" targetFramework=".NETFramework4.6.1" />
+      <frameworkAssembly assemblyName="System.Transactions" targetFramework=".NETFramework4.6.1" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
