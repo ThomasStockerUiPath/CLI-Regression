@@ -55,8 +55,8 @@ variables:
 steps:
 
 - task: PowerShell@2
-  displayName: 'Pack Windows 22.10.8467.18097
-'
+  displayName: 'Pack Windows 22.10.8467.18097'
+
   inputs:
     targetType: 'inline'
     script: |
