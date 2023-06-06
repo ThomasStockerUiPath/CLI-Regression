@@ -53,6 +53,14 @@ variables:
 
 
 steps:
+
+
+- task: PowerShell@2
+  displayName: 'Show Current Directory'
+  inputs:
+    targetType: 'inline'
+    script: |
+      Get-Location
 - task: PowerShell@2
   displayName: 'PowerShell Script'
   inputs:
