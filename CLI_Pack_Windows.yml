@@ -5,7 +5,7 @@
 
 variables:
 - name: UiPath.CLI.Windows.22.10.8467.18097
-  value: CLI/UiPath.CLI.Windows.22.10.8467.18097/tools\uipcli.exe
+  value: CLI\UiPath.CLI.Windows.22.10.8467.18097\tools\uipcli.exe
 
 - name: UiPath.CLI.Windows.23.2.8467.25277
   value: CLI\UiPath.CLI.Windows.23.2.8467.25277\tools\uipcli.exe
