@@ -61,6 +61,7 @@ steps:
     targetType: 'inline'
     script: |
       Get-Location
+      Get-ChildItem
 - task: PowerShell@2
   displayName: 'PowerShell Script'
   inputs:
