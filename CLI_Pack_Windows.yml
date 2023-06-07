@@ -60,7 +60,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $(UiPath.CLI.23.2.0-windows-dev) package pack "Projects\\Process_Windows_23.4\\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --libraryOrchestratorApplicationId "$(Staging_Orchestrator_AppId)" --libraryOrchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --libraryOrchestratorApplicationScope "$(Application_Scopes)" --libraryOrchestratorUrl "$(Staging_Orchestrator_Addresse)" --libraryOrchestratorFolder "$(Staging_Orchestrator_Folder)" --libraryOrchestratorTenant "$(Staging_Orchestrator_Tenant)" 
+      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --libraryOrchestratorApplicationId "$(Staging_Orchestrator_AppId)" --libraryOrchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --libraryOrchestratorApplicationScope "$(Application_Scopes)" --libraryOrchestratorUrl "$(Staging_Orchestrator_Addresse)" --libraryOrchestratorFolder "$(Staging_Orchestrator_Folder)" --libraryOrchestratorTenant "$(Staging_Orchestrator_Tenant)" 
 
 - task: PowerShell@2
   displayName: 'Pack Process Windows Legacy UiPath.CLI.23.2.0-windows-dev'
