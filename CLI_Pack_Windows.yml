@@ -62,6 +62,7 @@ steps:
     script: |
       $outputPath = "$(System.DefaultWorkingDirectory)"
       $outputPathFormatted = $outputPath -replace '\\', '\\\\'
+      Write-Host "outputPathFormatted $outputPathFormatted"
       $(UiPath.CLI.23.2.0-windows-dev) package pack "Projects\\Process_Windows_23.4\\project.json" -o $outputPathFormatted --autoVersion --outputType Process --libraryOrchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --libraryOrchestratorApplicationId "$(Staging_Orchestrator_AppId)" --libraryOrchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --libraryOrchestratorApplicationScope "$(Application_Scopes)" --libraryOrchestratorUrl "$(Staging_Orchestrator_Addresse)" --libraryOrchestratorFolder "$(Staging_Orchestrator_Folder)" --libraryOrchestratorTenant "$(Staging_Orchestrator_Tenant)" 
 
 - task: PowerShell@2
