@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hkcsIgXoBUBs/Ok+jQrKuK/5AonRd29dORMIfMMdLZMcQ1J5l+myVajJwxDZy7rzXwkK+p94wQdXPN3zNLf2wQ==",
+  "dgSpecHash": "U9uSu8oCTLDFFxECHqEqBZqndCTtDUitcAbg2IS6Bl5+JzXX0WYab0UMtcR9XQrRnPrQ+XJgjQXLtOw+yh9/qg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Test_Windows_23.4\\.local\\",
+  "projectFilePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Test_Windows_23.4\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\thomas.stocker\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\thomas.stocker\\.nuget\\packages\\azure.core\\1.18.0\\azure.core.1.18.0.nupkg.sha512",
@@ -290,7 +290,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Test_Windows_23.4\\.local",
+      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Test_Windows_23.4\\.local",
       "message": "Detected package version outside of dependency constraint: BlankLibrary2 1.0.1 requires UiPath.System.Activities (= 22.10.0-alpha.2965824) but version UiPath.System.Activities 23.4.2 was resolved.",
       "libraryId": "UiPath.System.Activities",
       "targetGraphs": [
@@ -302,7 +302,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Test_Windows_23.4\\.local",
+      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Test_Windows_23.4\\.local",
       "message": "Detected package version outside of dependency constraint: BlankLibrary2 1.0.1 requires UiPath.Testing.Activities (= 22.8.2-preview) but version UiPath.Testing.Activities 23.4.0 was resolved.",
       "libraryId": "UiPath.Testing.Activities",
       "targetGraphs": [
@@ -314,7 +314,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Test_Windows_23.4\\.local",
+      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Test_Windows_23.4\\.local",
       "message": "Detected package version outside of dependency constraint: BlankLibrary2 1.0.1 requires UiPath.UIAutomation.Activities (= 22.8.0-preview) but version UiPath.UIAutomation.Activities 23.4.4 was resolved.",
       "libraryId": "UiPath.UIAutomation.Activities",
       "targetGraphs": [

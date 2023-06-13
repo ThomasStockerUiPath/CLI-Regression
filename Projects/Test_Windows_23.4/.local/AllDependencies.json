@@ -21323,9 +21323,9 @@
     "restore": {
       "projectUniqueName": "Test_Windows_23.4",
       "projectName": "Test_Windows_23.4",
-      "projectPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Test_Windows_23.4\\.local",
+      "projectPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Test_Windows_23.4\\.local",
       "packagesPath": "C:\\Users\\thomas.stocker\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Test_Windows_23.4\\.local",
+      "outputPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Test_Windows_23.4\\.local",
       "fallbackFolders": [
         "C:\\Users\\thomas.stocker\\AppData\\Local\\UiPath\\NugetFallbackFolder"
       ]

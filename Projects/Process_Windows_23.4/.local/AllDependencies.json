@@ -21339,9 +21339,9 @@
     "restore": {
       "projectUniqueName": "Process_Windows_23.4",
       "projectName": "Process_Windows_23.4",
-      "projectPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
+      "projectPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Process_Windows_23.4\\.local",
       "packagesPath": "C:\\Users\\thomas.stocker\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
+      "outputPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Process_Windows_23.4\\.local",
       "fallbackFolders": [
         "C:\\Users\\thomas.stocker\\AppData\\Local\\UiPath\\NugetFallbackFolder"
       ]
@@ -21390,42 +21390,6 @@
     }
   },
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\Eigene Bilder' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\Eigene Musik' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\Eigene Videos' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\My Music' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\My Pictures' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\My Videos' is denied."
-    },
     {
       "code": "NU1608",
       "level": "Warning",

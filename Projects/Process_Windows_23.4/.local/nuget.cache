@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mTGJaAZrLWWF7bSfxNmvcmM5mYfkHDdi7WbPCAgRe9o7sR3Eqxpn1G9URY8yWJo7/ILoj6JsNCtCMJE+wPn79A==",
+  "dgSpecHash": "oc8JxfIGieNbYpL7DlVz9XRxY0oYAb52EW0ChsZ0Sh+oxIndgx08B9UFf85OHFPQKQsEt0/Tpg+e8avdMCc62Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local\\",
+  "projectFilePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Process_Windows_23.4\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\thomas.stocker\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\thomas.stocker\\.nuget\\packages\\azure.core\\1.18.0\\azure.core.1.18.0.nupkg.sha512",
@@ -287,52 +287,10 @@
   ],
   "logs": [
     {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\Eigene Bilder' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\Eigene Musik' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\Eigene Videos' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\My Music' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\My Pictures' is denied."
-    },
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
-      "message": "Access to the path 'C:\\Users\\thomas.stocker\\Documents\\My Videos' is denied."
-    },
-    {
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
+      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Process_Windows_23.4\\.local",
       "message": "Detected package version outside of dependency constraint: My.Demo.Day.Test.Library.B4.the.Demo 1.0.1 requires UiPath.System.Activities (= 22.10.1) but version UiPath.System.Activities 23.4.2 was resolved.",
       "libraryId": "UiPath.System.Activities",
       "targetGraphs": [
@@ -344,7 +302,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
+      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Process_Windows_23.4\\.local",
       "message": "Detected package version outside of dependency constraint: My.Demo.Day.Test.Library.B4.the.Demo 1.0.1 requires UiPath.Testing.Activities (= 22.10.0) but version UiPath.Testing.Activities 23.4.0 was resolved.",
       "libraryId": "UiPath.Testing.Activities",
       "targetGraphs": [
@@ -356,7 +314,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Process_Windows_23.4\\.local",
+      "filePath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Process_Windows_23.4\\.local",
       "message": "Detected package version outside of dependency constraint: My.Demo.Day.Test.Library.B4.the.Demo 1.0.1 requires UiPath.UIAutomation.Activities (= 22.10.1) but version UiPath.UIAutomation.Activities 23.4.4 was resolved.",
       "libraryId": "UiPath.UIAutomation.Activities",
       "targetGraphs": [
