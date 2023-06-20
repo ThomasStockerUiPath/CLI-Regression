@@ -13,7 +13,7 @@ pool:
 
 variables:
 - name: UiPath.CLI.UiPath.CLI.23.2.0-dev
-  value: CLI\UiPath.CLI.23.2.0-dev\tools\uipcli.dll
+  value: CLI/UiPath.CLI.23.2.0-dev/tools/uipcli.dll
 
 - name: Staging_Orchestrator_Addresse
   value: https://staging.uipath.com
@@ -44,7 +44,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      tree "$(Build.SourcesDirectory)/CLI\"
+      tree "$(Build.SourcesDirectory)/CLI/"
       dotnet "$(Build.SourcesDirectory)/$(UiPath.CLI.UiPath.CLI.23.2.0-dev)" 
 
 - task: PowerShell@2
