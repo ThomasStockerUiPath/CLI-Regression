@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>UiPath.CLI</id>
+    <version>23.2.0-dev</version>
+    <authors>UiPath Inc.</authors>
+    <iconUrl>https://download.uipath.com/UI_icon.png</iconUrl>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.TraceSource" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="UiPath.CoreIpc" version="2.1.0-20210811-12" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
