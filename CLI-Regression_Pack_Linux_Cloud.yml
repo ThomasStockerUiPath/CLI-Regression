@@ -48,18 +48,18 @@ steps:
 
 
 - task: PowerShell@2
-  displayName: 'Pack Library XPlatform UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Library XPlatform UiPath.CLI.UiPath.CLI.23.2.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)/$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)/Projects/Library_XPlatform_23.4/project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Library --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
+      $(Build.SourcesDirectory)/$(UiPath.CLI.UiPath.CLI.23.2.0-dev) package pack "$(Build.SourcesDirectory)/Projects/Library_XPlatform_23.4/project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Library --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
 
 
 - task: PowerShell@2
-  displayName: 'Pack Test XPlatform UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Test XPlatform UiPath.CLI.UiPath.CLI.23.2.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)/$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)/Projects/Test_XPlatform_23.4/project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Tests --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)'  --traceLevel "Verbose"
+      $(Build.SourcesDirectory)/$(UiPath.CLI.UiPath.CLI.23.2.0-dev) package pack "$(Build.SourcesDirectory)/Projects/Test_XPlatform_23.4/project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Tests --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)'  --traceLevel "Verbose"
