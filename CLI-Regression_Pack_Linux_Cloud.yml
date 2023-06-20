@@ -44,6 +44,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      tree "$(Build.SourcesDirectory)/CLI\"
       dotnet "$(Build.SourcesDirectory)/$(UiPath.CLI.UiPath.CLI.23.2.0-dev)" 
 
 - task: PowerShell@2
