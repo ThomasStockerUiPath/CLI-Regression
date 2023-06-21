@@ -1,0 +1,1588 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UiPath.Activities.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:UiPath.Activities.Contracts.AutomationToolsAttribute">
+            <summary>
+            Mark your assembly with this attribute in order to provide automation tools implementation.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.AutomationToolsAttribute.EntryPoint">
+            <summary>
+            <see cref="T:UiPath.Activities.Contracts.AutomationTools"/> implementing type.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.AutomationTools">
+            <summary>
+            A series of automation tools.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.AutomationTools.LaunchUiExplorer">
+            <summary>
+            Launches the UiExplorer.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.KnownContextScopes">
+            <summary>
+             Class that defines all base/well-known <see cref="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionContext"/> scopes
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.CodeAnalysis.KnownContextScopes.VisualBasicModelItemScope">
+            <summary>
+            Describes a context that is populated by ModelItems that can contain Visual Basic expressions
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionContext">
+            <summary>
+            Describes an object in the context of which expressions from a <see cref="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionProvider"/> are valid.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.ExpressionContext.ContextScope">
+            <summary>
+            The scope identifier for this context, used primarily to determine if the context is supported by any given provider.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CodeAnalysis.ExpressionContext.GetAllExpressions">
+            <summary>
+            Returns all compatible expressions found within the context.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionPreview">
+            <summary>
+            The result of an expression preview operation.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.ExpressionPreview.Preview">
+            <summary>
+            The preview of the expression, in string form.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.ExpressionPreview.IconBrushUri">
+            <summary>
+            The name and location of the icon brush to use for this preview. Optional.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionPreviewProvider">
+            <summary>
+            Defines a provider capable of providing expression previews
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CodeAnalysis.ExpressionPreviewProvider.GetPreviewFor(UiPath.Activities.Contracts.CodeAnalysis.UiPathExpression)">
+            <summary>
+            Returns an overview containing the preview for the given expression, if recognized by the provider.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CodeAnalysis.ExpressionPreviewProvider.GetPreviewFor(UiPath.Activities.Contracts.CodeAnalysis.UiPathExpression,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Type})">
+            <summary>
+            Returns an overview containing the preview for the given expression, if recognized by the provider.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionDirection">
+            <summary>
+            The direction for an expression
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionProviderResult">
+            <summary>
+            Defines the result of an <see cref="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionProvider"/>.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.ExpressionProviderResult.RawExpression">
+            <summary>
+            The raw expression string corresponding to this expression
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.ExpressionProviderResult.ExpressionTypeName">
+            <summary>
+            The name of the resulting type of this expression.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionProvider">
+            <summary>
+            Defines the capabilities of an expressions provider
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CodeAnalysis.ExpressionProvider.GenerateRawExpression(UiPath.Activities.Contracts.CodeAnalysis.ExpressionContext,System.Type,System.String,System.Nullable{UiPath.Activities.Contracts.CodeAnalysis.ExpressionDirection})">
+            <summary>
+            Generates a named expression that the current provider can accept and that works
+            in the context of the given <see cref="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionContext"/>.
+            </summary>
+            <param name="container">Expression context.</param>
+            <param name="type">The desired resulting type of the expression</param>
+            <param name="configString">The configuration string for the provider (e.g. the name of a binding, selector settings, etc.)</param>
+            <param name="direction">The desired direction of the expression, if any</param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CodeAnalysis.ExpressionProvider.Supports(UiPath.Activities.Contracts.CodeAnalysis.ExpressionContext)">
+            <summary>
+            Returns true if this provider can work with the specified <see cref="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionContext"/>.
+            </summary>
+            <param name="container"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionToken">
+            <summary>
+            Base class that defines a simple token in an expression
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.ExpressionToken.StringRepresentation">
+            <summary>
+            The string representation of the token (language independent)
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.ExpressionToken.Type">
+            <summary>
+            The <see cref="T:UiPath.Activities.Contracts.CodeAnalysis.TokenType"/> for this <see cref="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionToken"/>
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.ExpressionToken.ExpressionType">
+            <summary>
+            The type of the expression
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.FlatExpressionToken">
+            <summary>
+            Expression token that should be used in a flat list of <see cref="T:UiPath.Activities.Contracts.CodeAnalysis.ExpressionToken"/>s. 
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.FlatExpressionToken.DepthLevel">
+            <summary>
+            The depth level of the token, in the unspecified expression tree to which the token belongs.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.FlatExpressionToken.StartPos">
+            <summary>
+            The start position of the token in the original string
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.FlatExpressionToken.EndPos">
+            <summary>
+            The end position of the token in the original string
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.FlatExpressionToken.ArgumentExpressions">
+            <summary>
+            The list of argument expressions
+            Will be empty for tokens which are not identifiers for method calls, property indexers, etc.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.TokenType">
+            <summary>
+            Enumeration that contains all known token types
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.CodeAnalysis.TokenType.ObjectCreation">
+            <summary>
+            Token represents the creation of an object
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.CodeAnalysis.TokenType.IdentifierReference">
+            <summary>
+            Token represents the referencing of an object/method by name
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.CodeAnalysis.TokenType.LiteralUsage">
+            <summary>
+            Token represents the usage of a literal value
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CodeAnalysis.UiPathExpression">
+            <summary>
+            Defines a high level abstraction over an actual expression.  The
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CodeAnalysis.UiPathExpression.GetTokens">
+            <summary>
+            Returns the flat tokens making up this expression. The abstraction might not contain all tokens
+            necessary to fully recreate the original expression, but can instead contain only some of them, typically
+            the most relevant ones (e.g. only identifiers and literals).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.UiPathExpression.RawExpression">
+            <summary>
+            The raw expression, in string format.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CodeAnalysis.UiPathExpression.ExpressionType">
+            <summary>
+            The full resulting type of the expression, if available. Optional.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.IModelItemOutOfSyncPropertyValueProvider">
+            <summary>
+            This will hint code that builds a workflow tree based on ModelItem hierarchy 
+            to query the internal Activity object for property values instead of using its own presentation level values.
+            This is necessary when the backing Activity alters the value internally
+            <para>Example: The ModelItem on the presentation level contains a password in clear, while the backing Activity stores it encrypted </para>
+            <para>Note that Microsoft forbids altering the value at backing data level, as the ModelItem gets out of sync and it doesn't receive any notification</para>
+            See <a href="https://msdn.microsoft.com/en-us/library/system.activities.presentation.model.modelitem.getcurrentvalue(v=vs.110).aspx">MSDN</a>
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.IModelItemOutOfSyncPropertyValueProvider.GetOutOfSyncPropertyValue(System.String)">
+            <summary>
+            Builds a dictionary with the properties that are susceptible to get out of sync with the wrapping ModelItem. 
+            <para>Any property that is not listed here is considered in sync.</para>
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.ModelItemOutOfSyncPropertyValue">
+            <summary>
+            <para>Wrapper around the property value. The wrapped value can be null.</para>
+            <para>This class acts as a Nullable Reference Types (Optional) that is expected in c# 8.0</para>
+            See <see cref="T:UiPath.Activities.Contracts.IModelItemOutOfSyncPropertyValueProvider"/>
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.IObjectExtensibility">
+            <summary>
+            Allows objects to be extended by exposing a dictionary which will be used for all the
+            extra information.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.IObjectExtensibility.Repository">
+            <summary>
+            Repository where extended information is stored.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.IWorkflowDesignerContract">
+            <summary>
+            May be exposed by the host on the designer context or through <see cref="P:UiPath.Activities.Contracts.WorkflowDesignerContractRegistry.Instance" />
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.IWorkflowDesignerContract.Info">
+            <summary>
+            [NotNull] See <see cref="T:UiPath.Activities.Contracts.IWorkflowDesignerInfo"/>
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.IWorkflowDesignerContract.TelemetryProxy">
+            <summary>
+            See <see cref="T:UiPath.Activities.Contracts.Telemetry.ITelemetryProxy"/>
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.IWorkflowDesignerContract.HasFeature(System.String)">
+            <summary>
+            Check if a certain feature is available on the contract implementation. See <see cref="T:UiPath.Activities.Contracts.DesignerFeatures"/>
+            </summary>
+            <remarks>The peer implementation of the contract might be compiled against an older version of this interface and might not expose all the members available here</remarks>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.IWorkflowDesignerInfo">
+            <summary>
+            General informations about the workflow designer environment (host info, theme etc)
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.IWorkflowDesignerInfo.CurrentTheme">
+            <summary>
+            Theme type: Light, Dark
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.IWorkflowDesignerInfo.Version">
+            <summary>
+            Host version
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.WorkflowDesignerContractRegistry.Instance">
+            <summary>
+            Returns a <see cref="T:UiPath.Activities.Contracts.IWorkflowDesignerContract" /> implementation, if registered by the host or null otherwise
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.WorkflowDesignerContractRegistry.Register(UiPath.Activities.Contracts.IWorkflowDesignerContract)">
+            <summary>
+            Register a workflow designer contract. Called by the workflow designer host
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.DesignerFeatures.RegisterActivityFeature">
+            <summary>
+            Studio 21.8
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.XamlMigration">
+            <summary>
+            This provides a means to migrate each xaml file with respect to namespaces
+            and assembly references.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.XamlMigration.NamespacesToRemove">
+            <summary>
+            Define here namespaces to remove from the xaml.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.XamlMigration.NamespacesToAdd">
+            <summary>
+            Define here namespaces to add.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.XamlMigration.AssemblyReferencesToRemove">
+            <summary>
+            Define here assembly references to remove.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.XamlMigration.AssemblyReferencesToAdd">
+            <summary>
+            Define here assembly references to add to each file.
+            Use <see cref="P:System.Reflection.AssemblyName.Name"/>
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.BusinessPackageDescriptorBase">
+            <summary>
+            Contract for a package descriptor class specific to the business profile
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.BusinessPackageDescriptorBase.AutoCompleteServices">
+            <summary>
+            Provides services capable of providing auto complete options at design time
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.BusinessPackageDescriptorBase.ExpressionProviders">
+            <summary>
+            Provides the capabilities of an expressions provider
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.BusinessPackageDescriptorBase.ExpressionPreviewProviders">
+            <summary>
+            Providers capable of providing expression previews
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.BusinessPackageDescriptorBase.PackageInfoService">
+            <summary>
+            Defines custom filters for the activities published by the package
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.BusinessPackageDescriptorBase.WorkbookService">
+            <summary>
+            Defines a service capable of manipulating workbooks.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.BusinessPackageDescriptorBase.ContextDefinitions">
+            <summary>
+            Context definitions for activities found in the package
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.BusinessPackageDescriptorBase.ScenarioDefinitions">
+            <summary>
+            Scenario definitions for activities found in the package
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.BusinessPackageDescriptorBase.InjectedActionsServices">
+            <summary>
+            Provides services capable of providing injected actions at design time
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CommonScenarios.ContextFrame">
+            <summary>
+            Frame of a context trace. Stores information about an activity and its arguments.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ContextFrame.Owner">
+            <summary>
+            Owner of <see cref="P:UiPath.Activities.Contracts.CommonScenarios.ContextFrame.Arguments"/>.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ContextFrame.Arguments">
+            <summary>
+            List of arguments.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CommonScenarios.ContextArgument">
+            <summary>
+            Abstract definition of an activity argument. It can refer to an actual In/Out argument property or
+            just a definition of an expression with a name attached to it.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.#ctor(System.String,System.String,System.Type,System.String)">
+            <summary>
+            Construct a static argument that is not processed at runtime because we already set its expression value.
+            This is useful for containers where inner arguments value are generated at runtime where we know exactly their names.
+            Also can be used to expose object information (e.g. for MailCard we can have argument <paramref name="argumentName"/>
+            named "Mail Subject" with <paramref name="argumentExpression"/> expression "CurrentMail.Subject". This arguments can
+            not be binded  automatically.
+            </summary>
+            <param name="argumentName">Argument name. This sould be a used friendly name, it will just be displayed in UI.</param>
+            <param name="argumentExpression">Argument expression, must be a valid expression.</param>
+            <param name="type">Type of the <paramref name="argumentExpression"/> result.</param>
+            <param name="typeMetadata">Metadata for <paramref name="type"/>. Used to tell scenarios more information about <paramref name="type"/>
+            e.g. a string that we know is actually a file path.</param>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs a dynamic argument definition that reads the argument expression at design time. If there is no expression a binding
+            will automatically be generated.
+            </summary>
+            <param name="argumentName">Argument name. This sould be a used friendly name, it will just be displayed in UI.</param>
+            <param name="propertyPath">Path to the activity argument. e.g. activity A has the argument OutArg1, the <paramref name="propertyPath"/>
+            should be "OutArg1".</param>
+            <param name="typeMetadata">Metadata for argument. Used to tell scenarios more information about argument
+            e.g. a string that we know is actually a file path.</param>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.ArgumentName">
+            <summary>
+            User-friendly argument name that is displayed in UI.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.ArgumentExpression">
+            <summary>
+            Argument expression.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.PropertyPath">
+            <summary>
+            Path to the activity argument. e.g. activity A has the argument OutArg1, the <see cref="P:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.PropertyPath"/>
+            should be "OutArg1".
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.Type">
+            <summary>
+            Type of the <see cref="P:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.ArgumentExpression"/> result.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.TypeMetadata">
+            <summary>
+            Metadata for <see cref="P:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.Type"/>. Used to tell scenarios more information about <see cref="P:UiPath.Activities.Contracts.CommonScenarios.ContextArgument.Type"/>
+            e.g. a string that we know is actually a file path.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CommonScenarios.ScenarioArgument">
+            <summary>
+            Definition of an argument used by scenarios.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ScenarioArgument.Owner">
+            <summary>
+            Owner of <see cref="P:UiPath.Activities.Contracts.CommonScenarios.ScenarioArgument.Argument"/>
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ScenarioArgument.Argument">
+            <summary>
+            Argument that can be used in a scenario.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CommonScenarios.ActivityContextType">
+            <summary>
+            Definition of activity context type.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.CommonScenarios.ActivityContextType.ChildrenContext">
+            <summary>
+            Context exposed by parents to their children.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.CommonScenarios.ActivityContextType.SiblingsContext">
+            <summary>
+            Context exposed by an activity to its siblings.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CommonScenarios.ContextDefinition">
+            <summary>
+            Context definition for an activity.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ContextDefinition.ActivityType">
+            <summary>
+            Type of the activity whose context is overriden. String format is $"{namespace}.{className}, {assemblyName}", or <see cref="P:System.Type.AssemblyQualifiedName"/>
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CommonScenarios.ContextDefinition.GetContextFrames(System.Activities.Presentation.Model.ModelItem,UiPath.Activities.Contracts.CommonScenarios.ActivityContextType)">
+            <summary>
+            Returns the context definition based on context type and activity instance.
+            </summary>
+            <param name="activity">Activity for which to provide context.</param>
+            <param name="contextType">Context type.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CommonScenarios.ContextDefinition`1">
+            <summary>
+            Context definition for an activity. Provides a simpler way of defining a context when you have access
+            to the type of the activity.
+            </summary>
+            <typeparam name="T">Type of activity for which to provide context definition.</typeparam>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CommonScenarios.ScenarioResult">
+            <summary>
+            Contains information about the result of a scenario. Basically this describes information about an expression
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ScenarioResult.NewActivities">
+            <summary>
+            New activities resulted after a scenario was applied.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CommonScenarios.MatchedArguments">
+            <summary>
+            Contains information about matched arguments for a scenario.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.MatchedArguments.Arguments">
+            <summary>
+            Scenario matched arguments.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.CommonScenarios.ScenarioDefinition">
+            <summary>
+            Definition of a scenario.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ScenarioDefinition.Name">
+            <summary>
+            User-friendly name of the scenario.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.CommonScenarios.ScenarioDefinition.Description">
+            <summary>
+            Description of the scenario.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CommonScenarios.ScenarioDefinition.GetUi(UiPath.Activities.Contracts.CommonScenarios.MatchedArguments)">
+            <summary>
+            Returns the UI object that will be used by common scenario framework to configure the scenario.
+            Scenarios that do not need an ui will return null.
+            </summary>
+            <param name="arguments">Scenario arguments returned by <see cref="M:UiPath.Activities.Contracts.CommonScenarios.ScenarioDefinition.FindMatchingArguments(System.Collections.Generic.IEnumerable{UiPath.Activities.Contracts.CommonScenarios.ScenarioArgument})"/></param>
+            <returns>Returns UI object used for scenario configuration, or null if not needed.</returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CommonScenarios.ScenarioDefinition.Apply(System.Object,UiPath.Activities.Contracts.CommonScenarios.MatchedArguments)">
+            <summary>
+            Applies the scenario.
+            </summary>
+            <param name="ui">UI object returned by <see cref="M:UiPath.Activities.Contracts.CommonScenarios.ScenarioDefinition.GetUi(UiPath.Activities.Contracts.CommonScenarios.MatchedArguments)"/> used to configure the scenario.</param>
+            <param name="arguments">Scenario arguments returned by <see cref="M:UiPath.Activities.Contracts.CommonScenarios.ScenarioDefinition.FindMatchingArguments(System.Collections.Generic.IEnumerable{UiPath.Activities.Contracts.CommonScenarios.ScenarioArgument})"/></param>
+            <returns>Returns result of the scenario. Will be null if the scenario does not produce an expression.</returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.CommonScenarios.ScenarioDefinition.FindMatchingArguments(System.Collections.Generic.IEnumerable{UiPath.Activities.Contracts.CommonScenarios.ScenarioArgument})">
+            <summary>
+            Extracts usable arguments from the context trace. Should return the first set of usable arguments found in the trace.
+            If mode than 1 set of arguments is found this should return the first set.
+            E.g. if a scenario processes arguments of type string there are 6 arguments of type string in the trace it should return only the first
+            arguments it finds.
+            </summary>
+            <param name="contextPropertiesTrace"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Designer.ModelItemContainerInfo">
+            <summary>
+            Allows an Activity Designer to inform that it contains a hidden / inner sequence
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Designer.ModelItemContainerInfo.PropertyName">
+            <summary>
+            The expected property name on the activity designer that is of <see cref="T:UiPath.Activities.Contracts.Designer.ModelItemContainerInfo"/> type
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Designer.ModelItemContainerInfo.GetCollection">
+            <summary>
+            Gets the hidden / inner sequence collection
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.InvokeWorkflowRefactoring">
+            <summary>
+            These members are used only for Windows implementations. Because UiPath.Activities.Contracts sometimes is loaded with it's Windows version
+            for Portable projects we should provide a default implemetation for these methods. So don't put abstract members inside this class, only virtual.
+            </summary>
+            <summary>
+            Abstract class that is used to provide invoke workflow capabilities.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.InvokeWorkflowRefactoring.GetInvokedWorkflow(System.Activities.Presentation.Model.ModelItem)">
+            <summary>
+            For a compatible "invoke workflow" <see cref="T:System.Activities.Presentation.Model.ModelItem"/>, retrieves the path to the workflow that the activity invokes
+            </summary>
+            <param name="modelItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.InvokeWorkflowRefactoring.CreateInvokeActivity(System.String)">
+            <summary>
+            Attempts to create an invocation activity for the given workflow.
+            </summary>
+            <param name="workflowPath">The workflow to invoke</param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.InvokeWorkflowRefactoring.TryCreateInvokeActivityWithArguments(System.String,System.Collections.Generic.Dictionary{System.String,System.Activities.Argument})">
+            <summary>
+            Attempts to create an invocation activity for the given workflow file. If not overridden by the derived type, fallbacks
+            to creating an invoke activity without arguments.
+            </summary>
+            <param name="workflowPath">The workflow to invoke</param>
+            <param name="arguments">A dictionary of arguments to pre-populate in the invocation activity. The key is the name of the argument,
+            the value is the argument itself.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactory">
+            <summary>
+            Factory that produces action handlers for resources.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactory.RequiredServices">
+            <summary>
+            List of services needed by the action handlers that this factory can produce.
+            Services are identified by ids from <see cref="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceServicesTypes"/>. We need
+            to identify them this way so that we can check compatibility for different
+            versions of Studio and packages without making the runtime throw any errors in
+            case of missing interfaces.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactory.Type">
+            <summary>
+            The type of the resource. For expression resource types this identifies the actual type stored
+            in a resource variable. For activity resource types this is the type of the activity that can
+            be handled.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactory.IconBrushUri">
+            <summary>
+            Resource icon.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactory.Actions">
+            <summary>
+            List of available actions types.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactory.GetActionDisplayName(System.String)">
+            <summary>
+            Returns the localized display name of an action type.
+            </summary>
+            <param name="actionType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactory.CreateActionHandler(System.String,System.String,UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceDefinition)">
+            <summary>
+            Creates a handler that can execute the specified action type for the specified resource definition in the specified workflow.
+            </summary>
+            <param name="actionType">Type of action.</param>
+            <param name="workflowId">Id of workflow where the resource is defined.</param>
+            <param name="resourceDefinition">Resource definition.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceActionFactory">
+            <summary>
+            Factory for resources stored as expressions in variables.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceActionFactory.ConstructorDefinition">
+            <summary>
+            For expression resource type this contains the definition of the resource constructor and its
+            arguments. For activity resource types this is null.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceServicesTypes">
+            <summary>
+            Supported service types that will be registerd by the host. We use string constants to identify
+            services so that .Net Framework does not crash when we are loading mismatched versions of Studio and packages.
+            This allows us to safely check what services are suported by resources registerd from packages and avoid
+            loading mismatched resource factories/handlers.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionServices">
+            <summary>
+            Global class containing services which are intended to be used by resource action handlers.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionServices.Register(System.Object,System.String)">
+            <summary>
+            Registers a service using the specified key. If the key is already used it will be updated.
+            </summary>
+            <param name="service"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionServices.Resolve(System.String)">
+            <summary>
+            Returns the service associated with the specified key. Returns null if no service is found.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionServices.Resolve``1(System.String)">
+            <summary>
+            Returns the service associated with the specified key and casts the result to the specified type.
+            Will return null if no service is associated with the specified key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceServiceBase">
+            <summary>
+            Service used by resource action handlers to work with expressions.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceServiceBase.GetResourceNameValidationError(System.String,System.String)">
+            <summary>
+            Validate the specified resource name and returns null if it is valid. 
+            If it is invalid will return a validation error code from <see cref="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceNamesValidationErrorIds"/>.
+            </summary>
+            <param name="workflowId"></param>
+            <param name="resourceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceServiceBase.GenerateResourceName(System.String,System.String)">
+            <summary>
+            Generates a valid resource name based on the specified seed.
+            </summary>
+            <param name="workflowId"></param>
+            <param name="seed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceServiceBase.RenameResource(System.String,System.String,System.String)">
+            <summary>
+            Renames the specified resource. If the new name is invalid will return a validation error code from
+            <see cref="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceNamesValidationErrorIds"/>.
+            </summary>
+            <param name="workflowId"></param>
+            <param name="existingName"></param>
+            <param name="newName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceServiceBase.ExpandString(System.String)">
+            <summary>
+            Expands the given string expression.
+            </summary>
+            <param name="originalExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceServiceBase.GenerateDynamicString(System.String)">
+            <summary>
+            Generates a dynamic expression string based on the specified value. For example, if the given string
+            is a file path that that is user-specific (e.g. a file path that points to something in My Documents),
+            then this will turn that static string into a dynamic expression that can be "expanded" by
+            <see cref="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceServiceBase.ExpandString(System.String)"/> at design time and evaluated by WWF at runtime, and that is user agnostic.
+            It turns "C:\Users\SomeUser\SomeFolder" to something like string.Format("{}\SomeFolder", Environment.UserFolder).
+            
+            </summary>
+            <param name="originalValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceServiceBase.GetDynamicStringPreview(System.String)">
+            <summary>
+            Returns the preview if a generated dynamic expression. This is a user friendly localized text.
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactoryTypeKeys">
+            <summary>
+            Contains Ids for type of resource action hactories.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactoryTypeKeys.BusinessResourceFactoryKey">
+            <summary>
+            Factories intended for Business profile.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionHandler">
+            <summary>
+            This is an action handler produced by <see cref="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionFactory"/>. Can provide UI to configure a resource
+            or it can just execute an action on the specified resource.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionHandler.UiControl">
+            <summary>
+            UI control that allows the user to configure the currently associated resource.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionHandler.IsValid">
+            <summary>
+            Returns true if the data is considered to be valid.
+            </summary>
+        </member>
+        <member name="E:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionHandler.IsValidChanged">
+            <summary>
+            Triggered when the current configuration in <see cref="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionHandler.UiControl"/> is in invalid state.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionHandler.ExecuteAction">
+            <summary>
+            Executes action for the specified resource.
+            </summary>
+            <returns>Returns updated resource information.</returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionType">
+            <summary>
+            Actions that can be defined and executed on a resource.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionType.New">
+            <summary>
+            Create a new resource.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionType.Edit">
+            <summary>
+            Edit existing resource.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionType.Delete">
+            <summary>
+            Delete existing resource.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionType.Open">
+            <summary>
+            Open file associated with an existing resource.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceActionType.OpenLocation">
+            <summary>
+            Open file location associated with an existing resource.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceDefinition">
+            <summary>
+            Definition of a resource.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceDefinition.Name">
+            <summary>
+            Name of the resource.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceDefinition.Definition">
+            <summary>
+            Definition of the resource. This is different based on the specific type of resource.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceDefinition.IsNewResource">
+            <summary>
+            True if this definition is that of a new resource that is not yet included in the workflow.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceDefinition`1">
+            <summary>
+            Generic implementation of the resource definition.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceDefinition`1.Definition">
+            <summary>
+            Hide base class property so that it is easier for consumers that know the exact type of the resource definition
+            to use this property.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ExpressionResourceDefinition">
+            <summary>
+            Defines a resource stored as a constructor expression. The definition is a dictionary where key is the
+            constructor argument and <see cref="T:UiPath.Activities.Contracts.CodeAnalysis.FlatExpressionToken"/> is the parsed token of the value found in the expression.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ActivityResourceDefinition">
+            <summary>
+            Defines a resource stored in an activity (usually a card). The definition is the actual <see cref="T:System.Activities.Presentation.Model.ModelItem"/>
+            of the activity that we consider to be a resource.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceNamesValidationErrorIds">
+            <summary>
+            Error message ids for errors related to resource names.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceNamesValidationErrorIds.Duplicate">
+            <summary>
+            There is already a resource with the specified name.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceNamesValidationErrorIds.Empty">
+            <summary>
+            The specified resource name is empty.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.NetFramework.ProjectResources.ResourceNamesValidationErrorIds.Invalid">
+            <summary>
+            The specified resource name is invalid.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.NetFramework.ProjectResources.TypeConstructorDefinition.ConstructorArgumentsMap">
+            <summary>
+            List of constructor arguments in the order that we expect to find them in the type definition. It is stored as a
+            list of <see cref="T:System.Collections.Generic.KeyValuePair`2"/>.
+            <see cref="P:System.Collections.Generic.KeyValuePair`2.Key"/> is our internal id we give to the argument, in the current implementation
+            it is the name of the property of the local object mapped to this constructor arguments.
+            <see cref="P:System.Collections.Generic.KeyValuePair`2.Value"/> is the constructor argument name.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Refactorings">
+            <summary>
+            These members are used only for Windows implementations. Because UiPath.Activities.Contracts sometimes is loaded with it's Windows version
+            for Portable projects we should provide a default implemetation for these methods. So don't put abstract members inside this class, only virtual.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Refactorings.GetModelItemCollectionOfCommentedActivities(System.Object)">
+            <summary>
+            Returns the ModelItemCollection of all activities
+            inside CommentOut given the ModelItem of a commented activity.
+            Using "object" for all types because true types are not available on net5.0 and net6.0.
+            </summary>
+            <param name="activityModelItemInsideCommentOut">The ModelItem of an activtiy inside CommentOut</param>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.WizardDirectoryAttribute">
+            <summary>
+            Mark your assembly with this attribute to signal that it holds wizards.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.WizardDirectoryAttribute.WizardDirectoryType">
+            <summary>
+            The type that implements <see cref="T:UiPath.Activities.Contracts.WizardCollection"/>
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.WizardBase">
+            <summary>
+            A wizard implementation.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.WizardBase.RunWizard">
+            <summary>
+            Executes a wizard and returns the resulted activity.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.WizardCollection">
+            <summary>
+            Returns a multi tree of wizard definitions.
+            Each entry is a button on the ribbon.
+            Children for each entry are menu items.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.WizardCollection.GetWizardDefinitions">
+            <summary>
+            Returns a forest of wizard definitions.
+            Their order will define how they appear in the ribbon.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.WizardDefinition">
+            <summary>
+            Summary of a wizard's Ui properties.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.WizardDefinition.DisplayName">
+            <summary>
+            Translated display name.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.WizardDefinition.IconUri">
+            <summary>
+            Location of the icon resource in the providing assembly.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.WizardDefinition.Tooltip">
+            <summary>
+            Translated tooltip.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.WizardDefinition.Shortcut">
+            <summary>
+            This wizard's shortcut.
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.WizardDefinition.ChildrenDefinitions">
+            <summary>
+            Returns sub-wizards. (apprentices?)
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.WizardDefinition.Wizard">
+            <summary>
+            The wizard instance for this definition.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.AutoCompleteOption">
+            <summary>
+            Class representing an auto complete option
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteOption.ActionTypeReplaceExpresssion">
+            <summary>
+            Replace current expression
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteOption.ActionTypeAppendExpression">
+            <summary>
+            Appends to expression
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.AutoCompleteOption.Label">
+            <summary>
+            The label to be displayed
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.AutoCompleteOption.Expression">
+            <summary>
+            The expression to be used
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.AutoCompleteOption.ExpressionType">
+            <summary>
+            The expression type
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.AutoCompleteOption.Children">
+            <summary>
+            Child items for this AutoCompleteOption
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.AutoCompleteOption.IconBrushUri">
+            <summary>
+            The name and location of the icon brush to for the AutoComplete option
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.AutoCompleteOption.Tool">
+            <summary>
+            Will be set only when the option is a hosted tool
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.AutoCompleteOption.IsAbsolute">
+            <summary>
+            True if the generated expression should not be concatenated with the variable
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.AutoCompleteOption.ActionType">
+            <summary>
+            Defines autocomplete type
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.AutoCompleteService">
+            <summary>
+            Defines a service capable of providing auto complete options at design time
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys">
+            <summary>
+            Keys for the context dictionary
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.DataSource">
+            <summary>
+            Object containing the connection details to the data source for the autocomplete options,
+            usually an activity known to the package or a string dictionary
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.DataSourceResolverFunction">
+            <summary>
+            Should be a Func{ModelProperty, Type, string} that takes a property, a data type and a symbol name, and returns first the data source
+            (if any) that matches these given parmeters (e.g. an assistant provided card, in scope, that provides a symbol with the specified
+            name and type).
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.DataSourceModelItem">
+            <summary>
+            Should be the ModelItem of the source card. This is usefull when we want to change properties and make the visible in UI.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.SelectionExpression">
+            <summary>
+            Should be a tokenized UiPathExpression, identifying a unique resource related to the above data source
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.StringExpanderFunction">
+            <summary>
+            Should be a Func{string,string} that expands a given dynamic string.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.PropertyType">
+            <summary>
+            The underlying target property type
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.MaxDepth">
+            <summary>
+            If the autocomplete options are logically nested (parent->child), sets the maximum depth of the options to be provided.
+            1 means only first level children, 2 means provide options relevant to first level children and their children as well, etc.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.SecondaryLinkedPropertyValue">
+            <summary>
+            The value of the secondary linked property, if any.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.IsLoop">
+            <summary>
+            Indicates if the options are generated inside a foreach activity.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.AutoCompleteLocationKey">
+            <summary>
+            Indicates where the option is displayed.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.PropertyEditorLocation">
+            <summary>
+            Display in editor
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.TextComposerLocation">
+            <summary>
+            Display in text composer
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.ModelPropertyKey">
+            <summary>
+            The model property name
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.AutoCompleteService.ContextKeys.InnerPropertyType">
+            <summary>
+            The inner property type.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.AutoCompleteService.GetOptions(System.Type,System.Collections.Generic.Dictionary{System.String,System.Object},System.Type,System.String,System.Object[])">
+            <summary>
+            Returns auto-complete options for a given variable type
+            Allows only simple access, like X. and X.Method(..args).
+            </summary>
+            <param name="autocompleteType">The type for which the options should be computed</param>
+            <param name="targetType">If not null, only types compatible with this target type will be returned</param>
+            <param name="context">Generic context, used for computing the options</param>
+            <param name="memberName">Member on the target type for which to compute the options, if any</param>
+            <param name="memberNameArguments">Arguments for the member call, if any</param>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.AutoCompleteService.GetQuickOptions(System.Type,System.Collections.Generic.Dictionary{System.String,System.Object},System.Type)">
+            <summary>
+            Quick options can be loaded in a synchronous way, because they are lightweight and do not require external calls
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.AutoCompleteService.IsTypeSupported(System.Type)">
+            <summary>
+            Returns true if the service can return autocomplete options for the given variable type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.AutoCompleteService.HasExpressionToolForType(System.Type)">
+            <summary>
+            Returns true if the service can return an external tool for the given type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.AutoCompleteService.HasExpressionToolForType(System.Type,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Returns true if the service can return an external tool for the given type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.AutoCompleteService.OpenExpressionTool(System.Type,System.Collections.Generic.Dictionary{System.String,System.Object},System.Type)">
+            <summary>
+            Opens the Excel addin expression tool
+            Only read mode is required for generating the expression
+            <param name="autocompleteType">The type for which the options should be computed</param>
+            <param name="targetType">If not null, only types compatible with this target type will be returned</param>
+            <param name="context">Generic context, used for computing the options</param>
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.AutoCompleteService.HasStudioSupport">
+            <summary>
+            Returns true if the AutoCompleteService is supported in Studio. False if it's StudioX only.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.ExternalExpressionTool">
+            <summary>
+            Defines a custom expression tool, published by packages, which is able to generate valid expressions
+            Custom tools run in their own processes and are hosted in dedicated process (they are separate programs)
+            Used in the Business profile
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.ExternalExpressionTool.OpenSession(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Activates the window hosting the custom expression tool
+            </summary>
+            <param name="sessionData">Custom data to be used in activating the right context.</param>
+            <returns>The session id for the newly created session</returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.ExternalExpressionTool.GetSelection(System.String)">
+            <summary>
+            Returns the current user selection
+            It is the responsibility of the consumer to call Ping before using this method
+            and make sure the result is ready
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.ExternalExpressionTool.Ping(System.String)">
+            <summary>
+            Return true if the tool is still up and running
+            and is still in the same session
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.ExternalExpressionTool.Quit">
+            <summary>
+            Commands the external expression tool to quit
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.ExternalExpressionTool.Dispose(System.Boolean)">
+            <summary>
+            Disposes all resources
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.FeatureVersionCollectionQuery">
+            <summary>
+            Builds a list of features described in a class definition. The class must be static
+            and have only string constant fields, the resulted feature list is composed of the values
+            from each of this fields.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.FeatureVersionCollectionQuery.HasFeature(System.String)">
+            <summary>
+            Returns true if the specified feature is present.
+            </summary>
+            <param name="feature">Feature name.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.HostedExpressionTool">
+            <summary>
+            Represents a custom tool which can be return by the auto-complete service
+            as an option to be shown in the drop-down
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.HostedExpressionTool.Title">
+            <summary>
+            The title of the tool
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.HostedExpressionTool.IconBrushUri">
+            <summary>
+            The name and location of the icon brush to for the AutoComplete option
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.HostedExpressionTool.Content">
+            <summary>
+            UI content to be rendered to the user
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.HostedExpressionTool.Initialize(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Data to initialize the tool
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.HostedExpressionTool.GetResult">
+            <summary>
+            The result which should be requested when the user confirms it
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.HostedExpressionToolResultKeys">
+            <summary>
+            Keys for the Hosted Tool result dictionary
+            Constants are copied inline at compile-time,
+            which means we don't run into issues when using older contracts
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.HostedExpressionToolInitKeys">
+            <summary>
+            Keys for the Hosted Tool initialization dictionary
+            Constants are copied inline at compile-time,
+            which means we don't run into issues when using older contracts
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.InjectedActionsService">
+            <summary>
+            Defines a service capable of providing actions at design time
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.InjectedActionsService.GetActions(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Returns the actions for the given context.
+            </summary>
+            <param name="context">Should contain information about the context for which it should provide actions.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.InjectedAction">
+            <summary>
+            Represents an injected action
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.InjectedAction.Label">
+            <summary>
+            The label to be displayed
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.InjectedAction.IconBrushUri">
+            <summary>
+            The icon URI
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.InjectedAction.Execute">
+            <summary>
+            The action to be performed when the action is selected
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.MetadataInfoKeys">
+            <summary>
+            Collection of keys used by UiPath.Shared.Activities.MetadataInfoAttribute
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.ShowOnlyClear">
+            <summary>
+            Applied to activity argument properties. Instructs autocomplete menu providers to provide only the option Clear
+            for the specified property. This option will be inlined in the expression textbox.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.ShowAssignToOptions">
+            <summary>
+            Applied to activity argument properties. Instructs autocomplete menu providers to provide only the options specific
+            to 'Save for later' functionality, which include: UseSavedValues, SaveForLater, but also compatible options like:
+            ClearValue and AdvancedEditor.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.RealType">
+            <summary>
+            Applied to activity argument properties. Provides property editors/autocomplete menu providers with specific
+            information about the property type. E.g. for a property of type DateTime we might say it actually contains
+            only <see cref="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Date"/> or only <see cref="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Time"/>.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.Include">
+            <summary>
+            Applied to activity argument properties. Instructs property editors about what information is editable.
+            E.g. for a <see cref="T:System.TimeSpan"/> property, the editor assumes we want to edit only
+            hours, minutes and seconds, but for some properties we might wan to include <see cref="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Milliseconds"/>
+            or <see cref="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Days"/>.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.DisableExternalTools">
+            <summary>
+            Applied to activity properties for which we don't want any external tools to show up in helpers or editors
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.Exclude">
+            <summary>
+            Applied to activity argument properties. Instructs property editors about what information is not editable. 
+            E.g. for a <see cref="T:System.TimeSpan"/> property, the editor assumes we want to edit only
+            hours, minutes and seconds, but for some properties we might want to exclude <see cref="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Seconds"/>.
+            or <see cref="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Days"/>.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.RequiredPackage">
+            <summary>
+            Applied to complex scenarios. Instructs scenario service to hide scenarios that are not compatible with the current
+            project packages.
+            The value for this key has to be in the following format: "packageId=packageVersion"
+            - packageId is the id of the package, e.g. UiPath.Mail.Activities
+            - packageVersion is the version of the package in the NuGet package version range format. Bellow you can see a section of the documentation:<para />
+            Notation,	 Applied rule,	  Description<para />
+            1.0	      => x ≥ 1.0       => Minimum version, inclusive<para />
+            (1.0,)	  => x > 1.0       => Minimum version, exclusive<para />
+            [1.0]	  => x == 1.0      => Exact version match<para />
+            (,1.0]    => x ≤ 1.0       => Maximum version, inclusive<para />
+            (,1.0)	  => x ˂ 1.0       => Maximum version, exclusive<para />
+            [1.0,2.0] => 1.0 ≤ x ≤ 2.0 => Exact range, inclusive<para />
+            (1.0,2.0) => 1.0 ˂ x ˂ 2.0 => Exact range, exclusive<para />
+            [1.0,2.0) => 1.0 ≤ x ˂ 2.0 => Mixed inclusive minimum and exclusive maximum version<para />
+            (1.0)	  => invalid       => invalid<para />
+            For more details please check https://docs.microsoft.com/en-us/nuget/concepts/package-versioning#version-ranges
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.DropdownOptions">
+            <summary>
+            Used to customize the content of the StudioX dropdown
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.UserNotification">
+            <summary>
+            Metadata key for the action performed by an activity
+            Should be used on the property identifying the target of the action
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.AssociatedAutoCompleteOptions">
+            <summary>
+            Metadata key used to attach autocomplete options to an existing autocomplete options. They are not visible in ui
+            but will be applied when the parent autocomplete option is applied. This is used to updated dependent properties
+            values.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.IsLinkedToActivityGenericTypeArgument">
+            <summary>
+            Metadata key used to flag the properties that are synchronized with the argument type of a generic activity.
+            E.g. we have generic activity "GenericActivity&lt;T&gt;" and its property "LinkedProperty" of type "IList&lt;T&gt;".
+            In an workflow we have it as "GenericActivity&lt;int&gt;" and its property "LinkedProperty" of type "IList&lt;int&gt;".
+            When the property has this metadata, the autocomplete service will allow any IList&lt;T&gt; to be assigned to
+            "LinkedProperty" and will change the activity type to match the new value, for example it will allow the user to select
+            a value of type "IList&lt;string&gt;" and will change the activity type in the workflow to "GenericActivity&lt;string&gt;".
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.CustomActivityContainer">
+            <summary>
+            Metadata key used to mark an entity as a custom activity container
+            For StudioX: draw the sequences contained by this container using business style
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.EnforceSequenceVisibility">
+            <summary>
+            Metadata key used by an activity to enforce the visibility of it's sequences
+            (aka ensure that the hide sequences feature does not apply for it's sequences).
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoKeys.ExcludeFromActivityOutputs">
+            <summary>
+            Metadata key used by an activity to not show the outputs to the user
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Date">
+            <summary>
+            Identifies Date part from a DateTime value.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Time">
+            <summary>
+            Identifies Time part from a DateTime value.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Days">
+            <summary>
+            Identifies Days part from a TimeSpan value.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Hours">
+            <summary>
+            Identifies Hours part from a TimeSpan value.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Minutes">
+            <summary>
+            Identifies Minutes part from a TimeSpan value.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Seconds">
+            <summary>
+            Identifies Seconds part from a TimeSpan value.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.Milliseconds">
+            <summary>
+            Identifies Milliseconds part from a TimeSpan value.
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.ShowTools">
+            <summary>
+            Use together with DropdownOptions. If present the Tool options will be present in the StudioX dropdpown
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.ShowIterator">
+            <summary>
+            Use together with DropdownOptions. If present the Iterator options will be present in the StudioX dropdpown
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.ShowUseSavedValues">
+            <summary>
+            Use together with DropdownOptions. If present the SavedValues options will be present in the StudioX dropdpown
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.ShowClear">
+            <summary>
+            Use together with DropdownOptions. If present the Clear option will be present in the StudioX dropdpown
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.ShowCard">
+            <summary>
+            Use together with DropdownOptions. If present the Card options will be present in the StudioX dropdpown
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.ShowInjected">
+            <summary>
+            Use together with DropdownOptions. If present the Custom injected options will be present in the StudioX dropdpown
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.ShowAdvancedEditor">
+            <summary>
+            Use together with DropdownOptions. If present the Custom injectedA options will be present in the StudioX dropdpown
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.ShowDateTimePicker">
+            <summary>
+            Use together with DropdownOptions. If present the Custom injected options will be present in the StudioX dropdpown
+            </summary>
+        </member>
+        <member name="F:UiPath.Activities.Contracts.Services.MetadataInfoValues.UserNotificationWarnIfWorkspace">
+            <summary>
+            Use together with the UserNotification metadata key. Shows a notification to the user if Workspace is targeted
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.PackageInfoService">
+            <summary>
+            Provides information about the activities published by the package
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.ActivityCategory">
+            <summary>
+            Class describing the information associate to an activity category
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.ActivityCategory.IconBrushUri">
+            <summary>
+            Category icon uri
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.ActivityCategory.Color">
+            <summary>
+            Color specific to the category in hex format
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.ActivityCategory.Label">
+            <summary>
+            Category label
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.ActivityCategory.Id">
+            <summary>
+            Category id
+            </summary>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.ActivityCategory.Description">
+            <summary>
+            Category description
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Services.WorkbookService">
+            <summary>
+            Defines a service capable of manipulating workbooks.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.WorkbookService.OpenWorkbook(System.String,System.String,System.String)">
+            <summary>
+            Opens the specified workbook or brings excel to front if the workbook is already opened.
+            </summary>
+            <param name="path">Workbook file path.</param>
+            <param name="editPassword">Password used for editing the workbook.</param>
+            <param name="password">Password used for accessing the workbook.</param>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Services.WorkbookService.IsTypeCompatible(System.Type)">
+            <summary>
+            Checks if Excel can provide values for the requested type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:UiPath.Activities.Contracts.Services.WorkbookService.ExcelValueType">
+            <summary>
+            Generic value type which is used to represent the value from an Excel cell
+            In Studio X, this used instead of GenericValue to allow operations between Excel cells and values from other sources
+            Returns null by default to allow backwards compability checks
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.SkipContractValidationAttribute">
+            <summary>
+            Internal attribute used by unit tests that validate contracts. This can be used on classes,
+            properties, methods, fields. Any member that has this attribute will be skipped by the validation
+            tests.
+            </summary>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Telemetry.ITelemetryProxy">
+            <summary>
+            Accepts incomming telemetry requests from Activities and dispatches them to the desired endpoint.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Telemetry.ITelemetryProxy.Send(System.String)">
+            <summary>
+            Send the incoming telemetry to the final endpoint.
+            </summary>
+            <param name="telemetry">A serialized version of the telemetry object.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UiPath.Activities.Contracts.Windows.BusinessPackageFeatureKeys">
+            <summary>
+            Features suported by this version of contracts.
+            </summary>
+        </member>
+        <member name="M:UiPath.Activities.Contracts.Windows.BusinessPackageFeatures.HasFeature(System.String)">
+            <summary>
+            Returns true if the specified feature is present.
+            </summary>
+            <param name="feature"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
