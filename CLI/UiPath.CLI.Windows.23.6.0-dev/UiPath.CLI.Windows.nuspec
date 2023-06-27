@@ -4,7 +4,7 @@
     <id>UiPath.CLI.Windows</id>
     <version>23.6.0-dev</version>
     <authors>UiPath Inc.</authors>
-    <iconUrl>https://download.uipath.com/UI_icon.png</iconUrl>
+    <icon>UI_icon.png</icon>
     <description>Package Description</description>
     <dependencies>
       <group targetFramework="net6.0-windows7.0">
