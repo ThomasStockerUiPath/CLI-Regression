@@ -62,7 +62,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --libraryOrchestratorApplicationId "$(Staging_Orchestrator_AppId)" --libraryOrchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --libraryOrchestratorApplicationScope "$(Application_Scopes)" --libraryOrchestratorUrl "$(Staging_Orchestrator_Addresse)" --libraryOrchestratorFolder "$(Staging_Orchestrator_Folder)" --libraryOrchestratorTenant "$(Staging_Orchestrator_Tenant)" --traceLevel "Verbose" -o $(Build.SourcesDirectory)\Output
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --libraryOrchestratorApplicationId "$(Staging_Orchestrator_AppId)" --libraryOrchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --libraryOrchestratorApplicationScope "$(Application_Scopes)" --libraryOrchestratorUrl "$(Staging_Orchestrator_Addresse)" --libraryOrchestratorFolder "$(Staging_Orchestrator_Folder)" --libraryOrchestratorTenant "$(Staging_Orchestrator_Tenant)" --traceLevel "Verbose" -o "$(Build.SourcesDirectory)\Output"
 
 
 
