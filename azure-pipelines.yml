@@ -1,0 +1,73 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  #vmImage: ubuntu-latest
+  vmImage: windows-2022
+
+variables:
+- name: UiPath.CLI.Windows.22.10.8467.18097
+  value: CLI\UiPath.CLI.Windows.22.10.8467.18097\tools\uipcli.exe
+
+- name: UiPath.CLI.Windows.23.2.8467.25277
+  value: CLI\UiPath.CLI.Windows.23.2.8467.25277\tools\uipcli.exe
+
+- name: UiPath.CLI.Windows.23.6.0-dev
+  value: CLI\UiPath.CLI.Windows.23.6.0-dev\tools\uipcli.exe
+
+- name: UiPath.CLI.21.10.8319.10920
+  value: CLI\UiPath.CLI.21.10.8319.10920\lib\net461\uipcli.exe
+
+- name: UiPath.CLI.22.10.8467.18097
+  value: CLI\UiPath.CLI.22.10.8467.18097\tools\uipcli.exe
+
+- name: UiPath.CLI.23.2.8467.25277
+  value: CLI\UiPath.CLI.23.2.8467.25277\tools\uipcli.exe
+
+- name: UiPath.CLI.Windows.23.6.0-dev
+  value: CLI\UiPath.CLI.Windows.23.6.0-dev\tools\uipcli.exe
+
+- name: Staging_Orchestrator_Addresse
+  value: https://staging.uipath.com
+
+- name: Staging_Orchestrator_Folder
+  value: Modern Folder
+
+- name: Staging_Orchestrator_Tenant
+  value: DefaultTenant
+
+- name: Staging_Orchestrator_Organization
+  value: testsuite
+
+- name: Staging_Orchestrator_AppId
+  value: f77ad440-af8b-491c-a93a-d907e8a7fc69
+
+- name: Staging_Orchestrator_AppSecret
+  value: S(N?g@M?lfUV3@Ts
+
+- name: Application_Scopes
+  value: OR.Monitoring OR.Folders OR.BackgroundTasks OR.TestSets OR.TestSetExecutions OR.TestSetSchedules OR.Settings OR.Robots OR.Machines OR.Execution OR.Assets OR.Users OR.Jobs
+
+
+steps:
+
+- task: PowerShell@2
+  displayName: 'Pack Process Windows UiPath.CLI.Windows.23.6.0-dev'
+  continueOnError: true
+  inputs:
+    targetType: 'inline'
+    script: |
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --libraryOrchestratorApplicationId "$(Staging_Orchestrator_AppId)" --libraryOrchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --libraryOrchestratorApplicationScope "$(Application_Scopes)" --libraryOrchestratorUrl "$(Staging_Orchestrator_Addresse)" --libraryOrchestratorFolder "$(Staging_Orchestrator_Folder)" --libraryOrchestratorTenant "$(Staging_Orchestrator_Tenant)" --traceLevel "Verbose" -o $(Build.SourcesDirectory)\Output
+
+
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: $(Build.SourcesDirectory)\Output
+    ArtifactName: 'MyArtifact'
+    publishLocation: 'Container'
