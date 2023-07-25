@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Type="http://schemas.microsoft.com/packaging/2010/07/manifest" Target="/UiPath.CLI.Windows.nuspec" Id="R6EE7C4DB8E75E325" />
+  <Relationship Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="/package/services/metadata/core-properties/208ed9bc6926403888aa45a9b0952c57.psmdcp" Id="R9C98FFB42AF1236B" />
+</Relationships>

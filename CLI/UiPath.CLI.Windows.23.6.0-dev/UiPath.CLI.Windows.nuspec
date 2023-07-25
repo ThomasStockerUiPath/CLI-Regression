@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>UiPath.CLI.Windows</id>
+    <version>23.6.0-dev</version>
+    <authors>UiPath Inc.</authors>
+    <icon>UI_icon.png</icon>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0">
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.TraceSource" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="UiPath.DataService.Core" version="20.11.0-alpha0026" exclude="Build,Analyzers" />
+        <dependency id="UiPath.Orchestrator.Client" version="1.0.8545-alpha21216" exclude="Build,Analyzers" />
+        <dependency id="UiPath.Studio.ProjectPackager" version="23.6.0-alpha.12828" exclude="Build,Analyzers" />
+        <dependency id="UiPath.Telemetry.Client" version="1.5.3" exclude="Build,Analyzers" />
+        <dependency id="UiPath.Workflow.Runtime" version="6.0.0-20230405-01" exclude="Build,Analyzers" />
+        <dependency id="UiPath.Workflow.StandaloneAnalyzer" version="23.6.0-alpha.12828" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

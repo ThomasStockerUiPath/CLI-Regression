@@ -18,8 +18,8 @@ variables:
 - name: UiPath.CLI.Windows.23.2.8467.25277
   value: CLI\UiPath.CLI.Windows.23.2.8467.25277\tools\uipcli.exe
 
-- name: UiPath.CLI.23.2.0-windows-dev
-  value: CLI\UiPath.CLI.23.2.0-windows-dev\tools\uipcli.exe
+- name: UiPath.CLI.Windows.23.6.0-dev
+  value: CLI\UiPath.CLI.Windows.23.6.0-dev\tools\uipcli.exe
 
 - name: UiPath.CLI.21.10.8319.10920
   value: CLI\UiPath.CLI.21.10.8319.10920\lib\net461\uipcli.exe
@@ -29,6 +29,9 @@ variables:
 
 - name: UiPath.CLI.23.2.8467.25277
   value: CLI\UiPath.CLI.23.2.8467.25277\tools\uipcli.exe
+
+- name: UiPath.CLI.Windows.23.6.0-dev
+  value: CLI\UiPath.CLI.Windows.23.6.0-dev\tools\uipcli.exe
 
 - name: Staging_Orchestrator_Addresse
   value: https://staging.uipath.com
@@ -55,81 +58,81 @@ variables:
 steps:
 
 - task: PowerShell@2
-  displayName: 'Pack Process Windows UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Process Windows UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --libraryOrchestratorApplicationId "$(Staging_Orchestrator_AppId)" --libraryOrchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --libraryOrchestratorApplicationScope "$(Application_Scopes)" --libraryOrchestratorUrl "$(Staging_Orchestrator_Addresse)" --libraryOrchestratorFolder "$(Staging_Orchestrator_Folder)" --libraryOrchestratorTenant "$(Staging_Orchestrator_Tenant)" --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --libraryOrchestratorApplicationId "$(Staging_Orchestrator_AppId)" --libraryOrchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --libraryOrchestratorApplicationScope "$(Application_Scopes)" --libraryOrchestratorUrl "$(Staging_Orchestrator_Addresse)" --libraryOrchestratorFolder "$(Staging_Orchestrator_Folder)" --libraryOrchestratorTenant "$(Staging_Orchestrator_Tenant)" --traceLevel "Verbose"
 
 - task: PowerShell@2
-  displayName: 'Pack Process Windows Legacy UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Process Windows Legacy UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_Windows_Legacy_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_Windows_Legacy_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
 
 - task: PowerShell@2
-  displayName: 'Pack Process XPlatform UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Process XPlatform UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_XPlatform_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Process_XPlatform_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
 
 - task: PowerShell@2
-  displayName: 'Pack Library Windows UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Library Windows UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Library_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Library --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Library_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Library --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
 
 - task: PowerShell@2
-  displayName: 'Pack Library Windows Legacy UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Library Windows Legacy UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Library_Windows_Legacy_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Library --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Library_Windows_Legacy_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Library --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
 
 - task: PowerShell@2
-  displayName: 'Pack Library XPlatform UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Library XPlatform UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Library_XPlatform_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Library --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Library_XPlatform_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Library --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
 
 - task: PowerShell@2
-  displayName: 'Pack Template Windows UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Template Windows UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Template_Process_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Template_Process_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Process --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
 
 - task: PowerShell@2
-  displayName: 'Pack Test Windows UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Test Windows UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Test_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Tests --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Test_Windows_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Tests --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
 
 - task: PowerShell@2
-  displayName: 'Pack Test Windows Legacy UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Test Windows Legacy UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Test_Windows_Legacy_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Tests --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Test_Windows_Legacy_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Tests --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)' --traceLevel "Verbose"
 
 - task: PowerShell@2
-  displayName: 'Pack Test XPlatform UiPath.CLI.23.2.0-windows-dev'
+  displayName: 'Pack Test XPlatform UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.23.2.0-windows-dev) package pack "$(Build.SourcesDirectory)\Projects\Test_XPlatform_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Tests --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)'  --traceLevel "Verbose"
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package pack "$(Build.SourcesDirectory)\Projects\Test_XPlatform_23.4\project.json" -o "$(System.DefaultWorkingDirectory)" --autoVersion --outputType Tests --libraryOrchestratorAccountForApp '$(Staging_Orchestrator_Organization)' --libraryOrchestratorApplicationId '$(Staging_Orchestrator_AppId)' --libraryOrchestratorApplicationSecret '$(Staging_Orchestrator_AppSecret)' --libraryOrchestratorApplicationScope '$(Application_Scopes)' --libraryOrchestratorUrl '$(Staging_Orchestrator_Addresse)' --libraryOrchestratorFolder '$(Staging_Orchestrator_Folder)' --libraryOrchestratorTenant '$(Staging_Orchestrator_Tenant)'  --traceLevel "Verbose"
