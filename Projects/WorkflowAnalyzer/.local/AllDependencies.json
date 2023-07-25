@@ -1486,28 +1486,6 @@
           }
         }
       },
-      "My.Demo.Day.Test.Library.B4.the.Demo/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "UiPath.System.Activities": "[22.10.1]",
-          "UiPath.Testing.Activities": "[22.10.0]",
-          "UiPath.UIAutomation.Activities": "[22.10.1]"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/_._": {}
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/My Demo Day Test Library B4 the Demo.dll": {},
-          "lib/net6.0-windows7.0/My Demo Day Test Library B4 the Demo_Expressions_15119229.dll": {}
-        },
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
-        }
-      },
       "Namotion.Reflection/1.0.14": {
         "type": "package",
         "dependencies": {
@@ -4271,7 +4249,7 @@
           "lib/net5.0/ConnectionClient.dll": {}
         }
       },
-      "UiPath.Excel.Activities/2.20.1": {
+      "UiPath.Excel.Activities/2.21.0-preview": {
         "type": "package",
         "dependencies": {
           "ClosedXML": "0.95.4",
@@ -6775,28 +6753,6 @@
         "runtime": {
           "lib/net6.0/MimeKit.dll": {
             "related": ".pdb;.xml"
-          }
-        }
-      },
-      "My.Demo.Day.Test.Library.B4.the.Demo/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "UiPath.System.Activities": "[22.10.1]",
-          "UiPath.Testing.Activities": "[22.10.0]",
-          "UiPath.UIAutomation.Activities": "[22.10.1]"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/_._": {}
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/My Demo Day Test Library B4 the Demo.dll": {},
-          "lib/net6.0-windows7.0/My Demo Day Test Library B4 the Demo_Expressions_15119229.dll": {}
-        },
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
           }
         }
       },
@@ -9581,7 +9537,7 @@
           "lib/net5.0/ConnectionClient.dll": {}
         }
       },
-      "UiPath.Excel.Activities/2.20.1": {
+      "UiPath.Excel.Activities/2.21.0-preview": {
         "type": "package",
         "dependencies": {
           "ClosedXML": "0.95.4",
@@ -12980,34 +12936,6 @@
         "lib/netstandard2.1/MimeKit.xml",
         "mimekit.3.1.1.nupkg.sha512",
         "mimekit.nuspec"
-      ]
-    },
-    "My.Demo.Day.Test.Library.B4.the.Demo/1.0.1": {
-      "sha512": "STzFhd4wznhvSgBWsoB/trxQXXGHt0gzwDyZwl3TC3YOriczkedp87aaOR0dIq5nTo7ncp5mERA4hsMWEzziLw==",
-      "type": "package",
-      "path": "my.demo.day.test.library.b4.the.demo/1.0.1",
-      "files": [
-        ".nupkg.metadata",
-        "content/.project/PackageBindingsMetadata.json",
-        "content/.project/design.json",
-        "content/.settings/Design/settings-5190454b.json",
-        "content/.settings/Design/settings-a1b2dac1.json",
-        "content/.settings/Release/settings-1a5b880a.json",
-        "content/.settings/Release/settings-5190454b.json",
-        "content/.settings/Release/settings-590bb27b.json",
-        "content/.settings/Release/settings-82ca306a.json",
-        "content/.settings/Release/settings-9e9290da.json",
-        "content/.settings/Release/settings-a1b2dac1.json",
-        "content/Extract Library/An Invoked Workflow File.xaml",
-        "content/bindings.json",
-        "content/bindings_v2.json",
-        "content/project.json",
-        "contentFiles/any/any/.objects/.metadata",
-        "contentFiles/any/any/.objects/.type",
-        "lib/net6.0-windows7.0/My Demo Day Test Library B4 the Demo.dll",
-        "lib/net6.0-windows7.0/My Demo Day Test Library B4 the Demo_Expressions_15119229.dll",
-        "my.demo.day.test.library.b4.the.demo.1.0.1.nupkg.sha512",
-        "my.demo.day.test.library.b4.the.demo.nuspec"
       ]
     },
     "Namotion.Reflection/1.0.14": {
@@ -19611,10 +19539,10 @@
         "uipath.connectionclient.nuspec"
       ]
     },
-    "UiPath.Excel.Activities/2.20.1": {
-      "sha512": "CX+Iq3vez7I4n46+Nbfi7oOdf+aAhxHsbk0K6tp58m645auLoCTpYvcg9F1+QF57zBEb4qrv3wWYYrHuOGMo1g==",
+    "UiPath.Excel.Activities/2.21.0-preview": {
+      "sha512": "NeHI3I8J87V1WFvM6P+sgPwv3/7W9q2mfSXtBjmytiFlP+cPjYw1x+Nbsmgs5ckhIseZMPAwF3kDXYGiYmoniQ==",
       "type": "package",
-      "path": "uipath.excel.activities/2.20.1",
+      "path": "uipath.excel.activities/2.21.0-preview",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -19731,7 +19659,7 @@
         "lib/net5.0/zh-CN/UiPath.Excel.resources.dll",
         "lib/net5.0/zh-TW/UiPath.Excel.Activities.resources.dll",
         "lib/net5.0/zh-TW/UiPath.Excel.resources.dll",
-        "uipath.excel.activities.2.20.1.nupkg.sha512",
+        "uipath.excel.activities.2.21.0-preview.nupkg.sha512",
         "uipath.excel.activities.nuspec"
       ]
     },
@@ -21323,8 +21251,7 @@
   "projectFileDependencyGroups": {
     "": [],
     "net6.0-windows7.0": [
-      "My.Demo.Day.Test.Library.B4.the.Demo >= 1.0.1 <= 1.0.1",
-      "UiPath.Excel.Activities >= 2.20.1 <= 2.20.1",
+      "UiPath.Excel.Activities >= 2.21.0-preview <= 2.21.0-preview",
       "UiPath.Mail.Activities >= 1.18.2 <= 1.18.2",
       "UiPath.System.Activities >= 23.4.2 <= 23.4.2",
       "UiPath.Testing.Activities >= 23.4.0 <= 23.4.0",
@@ -21332,28 +21259,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\WINDOWS\\system32\\config\\systemprofile\\.nuget\\packages\\": {}
+    "C:\\Users\\thomas.stocker\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "Process_Windows_23.4",
-      "projectName": "Process_Windows_23.4",
-      "projectPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Process_Windows_23.4\\.local",
-      "packagesPath": "C:\\WINDOWS\\system32\\config\\systemprofile\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\Process_Windows_23.4\\.local"
+      "projectUniqueName": "WorkflowAnalyzer",
+      "projectName": "WorkflowAnalyzer",
+      "projectPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\WorkflowAnalyzer\\.local",
+      "packagesPath": "C:\\Users\\thomas.stocker\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\thomas.stocker\\Documents\\GitHub\\CLI-Regression\\Projects\\WorkflowAnalyzer\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
         "dependencies": {
-          "My.Demo.Day.Test.Library.B4.the.Demo": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[1.0.1, 1.0.1]"
-          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[2.20.1, 2.20.1]"
+            "version": "[2.21.0-preview, 2.21.0-preview]"
           },
           "UiPath.Mail.Activities": {
             "include": "Runtime",
@@ -21376,7 +21298,7 @@
             "version": "[23.4.4, 23.4.4]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\thomas.stocker\\AppData\\Roaming\\Jenkins_Workspace\\CLI\\cached\\UiPath.CLI.Windows\\22.10.8438.32859\\tools\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\thomas.stocker\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
@@ -21384,40 +21306,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: My.Demo.Day.Test.Library.B4.the.Demo 1.0.1 requires UiPath.System.Activities (= 22.10.1) but version UiPath.System.Activities 23.4.2 was resolved.",
-      "libraryId": "UiPath.System.Activities",
-      "targetGraphs": [
-        "net6.0-windows7.0",
-        "net6.0-windows7.0/win10-x64"
-      ]
-    },
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: My.Demo.Day.Test.Library.B4.the.Demo 1.0.1 requires UiPath.Testing.Activities (= 22.10.0) but version UiPath.Testing.Activities 23.4.0 was resolved.",
-      "libraryId": "UiPath.Testing.Activities",
-      "targetGraphs": [
-        "net6.0-windows7.0",
-        "net6.0-windows7.0/win10-x64"
-      ]
-    },
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: My.Demo.Day.Test.Library.B4.the.Demo 1.0.1 requires UiPath.UIAutomation.Activities (= 22.10.1) but version UiPath.UIAutomation.Activities 23.4.4 was resolved.",
-      "libraryId": "UiPath.UIAutomation.Activities",
-      "targetGraphs": [
-        "net6.0-windows7.0",
-        "net6.0-windows7.0/win10-x64"
-      ]
-    }
-  ]
+  }
 }
