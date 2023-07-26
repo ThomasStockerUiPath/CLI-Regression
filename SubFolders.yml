@@ -36,7 +36,7 @@ variables:
   value: https://staging.uipath.com
 
 - name: Staging_Orchestrator_Folder
-  value: UAT Non Production\CBK Processes Non Production
+  value: UAT Non Production/CBK Processes Non Production
 
 - name: Staging_Orchestrator_Tenant
   value: DefaultTenant
