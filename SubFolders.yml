@@ -57,12 +57,12 @@ variables:
 steps:
 
 - task: PowerShell@2
-  displayName: 'Pack Process Windows UiPath.CLI.Windows.23.6.0-dev'
+  displayName: 'Run Tests in Subfolders'
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) test run "$(Staging_Orchestrator_Addresse)" "$(Staging_Orchestrator_Tenant)" -s uipath_devops_Tests --AccountForApp "$(Staging_Orchestrator_Organization)" --OrchestratorApplicationId "$(Staging_Orchestrator_AppId)" --OrchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --OrchestratorApplicationScope "$(Application_Scopes)"  -o "$(Staging_Orchestrator_Folder)"  --traceLevel "Verbose" 
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) test run "$(Staging_Orchestrator_Addresse)" "$(Staging_Orchestrator_Tenant)" -s uipath_devops_Tests --accountForApp "$(Staging_Orchestrator_Organization)" --applicationId "$(Staging_Orchestrator_AppId)" --applicationSecret "$(Staging_Orchestrator_AppSecret)" --applicationScope "$(Application_Scopes)"  -o "$(Staging_Orchestrator_Folder)"  --traceLevel "Verbose" 
 
 
 
