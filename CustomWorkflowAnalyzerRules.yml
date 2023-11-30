@@ -41,7 +41,7 @@ variables:
 steps:
 
 - task: PowerShell@2
-  displayName: 'Pack Process Windows UiPath.CLI.Windows.23.6.0-dev'
+  displayName: 'Analyze Process Windows UiPath.CLI.Windows.23.6.0-dev'
   continueOnError: true
   inputs:
     targetType: 'inline'
