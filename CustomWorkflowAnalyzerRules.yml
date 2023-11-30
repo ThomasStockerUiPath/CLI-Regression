@@ -45,8 +45,8 @@ steps:
   continueOnError: true
   inputs:
     targetType: 'inline'
-    script: |
-      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package analyze "$(Build.SourcesDirectory)\Projects\CustomWorkflowAnalyzerRules\project.json"  --orchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --orchestratorApplicationId "$(Staging_Orchestrator_AppId)" --orchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --orchestratorApplicationScope "$(Application_Scopes)" --orchestratorUrl "$(Staging_Orchestrator_Addresse)" --orchestratorFolder "$(Staging_Orchestrator_Folder)" --orchestratorTenant "$(Staging_Orchestrator_Tenant)"  
+    script: '$(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package analyze "$(Build.SourcesDirectory)\Projects\CustomWorkflowAnalyzerRules\project.json"  --orchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --orchestratorApplicationId "$(Staging_Orchestrator_AppId)" --orchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --orchestratorApplicationScope "$(Application_Scopes)" --orchestratorUrl "$(Staging_Orchestrator_Addresse)" --orchestratorFolder "$(Staging_Orchestrator_Folder)" --orchestratorTenant "$(Staging_Orchestrator_Tenant)"'
+    failOnStderr: true
 
 
 - task: PowerShell@2
