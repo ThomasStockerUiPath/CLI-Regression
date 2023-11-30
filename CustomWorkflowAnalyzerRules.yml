@@ -46,8 +46,15 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      var foo = $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package analyze "$(Build.SourcesDirectory)\Projects\CustomWorkflowAnalyzerRules\project.json"  --orchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --orchestratorApplicationId "$(Staging_Orchestrator_AppId)" --orchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --orchestratorApplicationScope "$(Application_Scopes)" --orchestratorUrl "$(Staging_Orchestrator_Addresse)" --orchestratorFolder "$(Staging_Orchestrator_Folder)" --orchestratorTenant "$(Staging_Orchestrator_Tenant)"  
+      $(Build.SourcesDirectory)\$(UiPath.CLI.Windows.23.6.0-dev) package analyze "$(Build.SourcesDirectory)\Projects\CustomWorkflowAnalyzerRules\project.json"  --orchestratorAccountForApp "$(Staging_Orchestrator_Organization)" --orchestratorApplicationId "$(Staging_Orchestrator_AppId)" --orchestratorApplicationSecret "$(Staging_Orchestrator_AppSecret)" --orchestratorApplicationScope "$(Application_Scopes)" --orchestratorUrl "$(Staging_Orchestrator_Addresse)" --orchestratorFolder "$(Staging_Orchestrator_Folder)" --orchestratorTenant "$(Staging_Orchestrator_Tenant)"  
 
 
+- task: PowerShell@2
+  displayName: 'Final block'
+  continueOnError: true
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo 'final block'
 
 
